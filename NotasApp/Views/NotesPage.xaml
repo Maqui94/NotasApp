@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="NotasApp.Views.NotesPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Notes">
+    <VerticalStackLayout
+        Margin="5"
+        BackgroundColor="DarkKhaki"
+        Spacing="10">
+        <Entry
+            x:Name="TitleEntry"
+            FontAttributes="Bold"
+            FontSize="18"
+            Placeholder="Título de la nota"
+            PlaceholderColor="Gray"
+            Text="{Binding Title}" />
+        <Editor
+            x:Name="TextEditor"
+            HeightRequest="100"
+            Placeholder="Escriba su nota"
+            PlaceholderColor="Aquamarine"
+            Text="{Binding Text}" />
+
+        <Grid ColumnDefinitions="*,*" ColumnSpacing="4">
+
+            <Button Clicked="SaveButton_Clicked" Text="Guardar" />
+            <Button
+                Grid.Column="1"
+                Clicked="DeleteButton_Clicked"
+                Text="Borrar" />
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>
